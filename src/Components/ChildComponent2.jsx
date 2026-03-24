@@ -10,5 +10,5 @@ const ChildComponent2 = ({name}) => {
   )
 }
 
-export default ChildComponent2 
+export default ChildComponent2 ;
 */

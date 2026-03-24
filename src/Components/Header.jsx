@@ -7,9 +7,13 @@ function Header({ message}) {
     </>
   );
 }
-export default Header;   */
+export default Header;
 
-/* CHILD TO PARENT DATA PASSING
+*/
+
+
+
+           /* CHILD TO PARENT DATA PASSING
 
 function Header({ getDataFromChild }) {
   let message = "Hi , How are you?";
@@ -22,4 +26,6 @@ function Header({ getDataFromChild }) {
     </>
   );
 }
-export default Header;  */
+export default Header;
+
+*/
