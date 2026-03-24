@@ -14,3 +14,61 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+                     DESTRUCTURING
+
+
+               { IN OBJECT  (JSON OBJECT)}
+
+    let person = {
+        name : bhuvana;
+        age : 28;
+    }           
+
+
+    let { name , age } = person;
+    console.log (name , age )
+
+
+
+
+                   { IN ARRAY }
+
+    let person = [
+        name : bharath;
+        age :  30;
+ 
+    ]
+      
+    let   [ name , age ] = person;
+    console.log ( name , age );
+
+
+
+                    IN FUNCTION      
+                     (ARRAY)
+
+      function fun([name , age ]);
+      console.log(name,age);
+      
+      let person = [ 
+           narunika;
+           23;
+        ]               
+
+    fun(person);
+
+
+
+
+                         (OBJECT)
+
+        function fun ({ name , age });
+          console.log( name , age );        
+        let person = {
+            name : narunika;
+            age : 23;
+        }            
+
+        fun (person);                           
