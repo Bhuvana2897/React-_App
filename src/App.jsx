@@ -70,7 +70,17 @@ export default App ;
 
 
 
+import Login from "./Components/login.jsx";
 
+const App = () => {
+  return (
+   <> 
+     <Login/>
+   </>
+  )
+}
+
+export default App
      
            
    
