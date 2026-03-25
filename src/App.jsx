@@ -11,6 +11,8 @@
 
 
 
+
+
 /*function App() {
  return (
   <>
@@ -70,7 +72,7 @@ export default App ;
 
 
 
-import Login from "./Components/login.jsx";
+ /*import Login from "./Components/login.jsx";
 
 const App = () => {
   return (
@@ -80,7 +82,47 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
+
+*/
+
+
+import { useState } from "react";
+
+const App = () => {
+ 
+ const [ todos , setTodos] = useState([]);
+
+  const fetching = () =>{
+    fetch('https://698dd17eb79d1c928ed6a359.mockapi.io/todos')
+    
+    .then (response => {
+      return response.json();
+    })
+    
+    .then((response) => {
+      setTodos(response);
+    })
+    
+  }
+   console.log(todos);
+  return (
+    <>
+       <button onClick = {fetching}>Fetch Todos</button>
+       <h1>Todos</h1>
+       <ul>
+        {
+         todos
+             .map(todo => (
+               <li key={todo.id}>{todo.Title}</li>
+             ))
+        }
+       </ul> 
+    </>
+  )
+}
+
+export default App ;
      
            
    
