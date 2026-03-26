@@ -1,14 +1,16 @@
 
 /*import { useState } from "react";
 const Login = () => {
-    un controlled inputs
+                            un controlled inputs
+
         const Username = event.target.username.value; 
         const Password = event.target.password.value;
         
         console.log( 'Logging in with' , Username ,'and ', password)
         
 
-         controlled inputs
+                            controlled inputs
+                            
 
         const [Username ,  setUsername ] = useState('');
         const [Password ,  setPassword ] = useState('');    

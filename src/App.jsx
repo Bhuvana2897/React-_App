@@ -255,7 +255,7 @@ export default App ;
   */
 
            
-         //     api call fror useeffect
+         /*    api call fror useeffect
 
     import {useState ,  useEffect} from "react" ;
     import axios from "axios";
@@ -289,3 +289,42 @@ export default App ;
      }
      
      export default App ;
+
+     */
+
+
+                //  USEREF[ HOOKS]  
+
+          
+
+          import { useRef } from "react"
+         
+         const App = () => {
+
+          const messageRef = useRef(null)
+
+
+          const handleSend = () =>{
+            console.log ('sending message .....')
+            console.log( messageRef .current .value)
+          }
+           return (
+            <>
+                  <input 
+                         type = "text" 
+                         placeholder = " Type a message ......."
+                         ref = {messageRef}
+
+                  />  
+                  &nbsp;&nbsp;
+                  <button  onClick = {handleSend}>
+                          Send  
+                  </button>        
+            </>
+           )
+         }
+         
+         export default App   ;    
+
+          
+    
