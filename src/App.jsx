@@ -203,7 +203,7 @@ const App = () => {
   useEffect (() =>{
 
     console.log ('running inside useEfect')
-  } , );
+  } ,[] );
          
           return (
           <>
