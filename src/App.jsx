@@ -9,12 +9,6 @@
   
 }*/
 
-
-
-
-
-
-
 /*function App() {
  return (
   <>
@@ -41,8 +35,6 @@ function App() {
 }
 export default App;*/
 
-
-
 /*                CHILD TO PARRENT DATA PASSING
 
 
@@ -60,8 +52,6 @@ function App() {
   )
 }
 export default App; */
-
-
 
 /*                       PROPS DRILLING
 
@@ -81,14 +71,9 @@ const App = () => {
 export default App ;
 */
 
+// FORM LOGIN
 
-
-
-             // FORM LOGIN 
-
-
-
- /*import Login from "./Components/login.jsx";
+/*import Login from "./Components/login.jsx";
 
 const App = () => {
   return (
@@ -102,9 +87,7 @@ export default App;
 
 */
 
-              //    FETCH
-
-
+//    FETCH
 
 /*  import { useState } from "react";
 
@@ -144,9 +127,8 @@ const App = () => {
 export default App ;
 
 */
-     
-           
-           /*      AXIOS
+
+/*      AXIOS
 
 
 
@@ -189,14 +171,12 @@ const App = () => {
 export default App ;
      
 */
-           
-   
 
-                  // USE EFFECT [HOOKS]
+// USE EFFECT [HOOKS]
 
-           // run a function after a component is rendered whenever state changes       
+// run a function after a component is rendered whenever state changes
 
-  /*import {useEffect , useState} from "react"; 
+/*import {useEffect , useState} from "react"; 
 
 const App = () => {
 
@@ -219,8 +199,8 @@ const App = () => {
 export default App ;
 
 */
-     
-      /*                           set state for dependencies for singlre state run
+
+/*                           set state for dependencies for singlre state run
 
 
     import {useEffect , useState} from  "react" ;
@@ -256,8 +236,7 @@ export default App ;
 
   */
 
-           
-         /*    api call fror useeffect
+/*    api call fror useeffect
 
     import {useState ,  useEffect} from "react" ;
     import axios from "axios";
@@ -294,8 +273,7 @@ export default App ;
 
      */
 
-
-                /*       USEREF[ HOOKS]  
+/*       USEREF[ HOOKS]  
                       
 
           
@@ -330,8 +308,8 @@ export default App ;
          export default App   ;    
 
          */
-                
-                 //             useRef [ normal variable and using useRef variables ]
+
+/*            useRef [ normal variable and using useRef variables ]
           
        import {useRef ,  useState} from  "react" 
         
@@ -365,3 +343,61 @@ export default App ;
         }
         
         export default App ;
+
+        */
+
+/*   Basic useState example  
+
+
+         import {useState} from  "react" 
+        
+            const App = () => {
+
+                 let [Likes , setLikes] = useState (0);
+
+            const handleLike = () => {
+
+                  setLikes(Likes + 1 );
+
+            }
+
+             console.log(Likes);
+
+           return (
+            
+            <>
+               <h1> Likes :{Likes} </h1>
+               <button onClick={handleLike}> Likes  </button> &nbsp;
+               
+            </>
+          )
+        }
+        
+        export default App ; */
+
+        //                  useReducer [ hooks]
+
+import { useReducer } from "react";
+
+const reducer = () => {
+  console.log("reducer called");
+};
+
+const App = () => {
+  let [Likes, dispatch] = useReducer(reducer, 0);
+
+  const handleLike = () => {
+    dispatch();
+  };
+
+  console.log(Likes);
+
+  return (
+    <>
+      <h1> Likes :{Likes} </h1>
+      <button onClick={handleLike}> Likes </button> &nbsp;
+    </>
+  );
+};
+
+export default App;
