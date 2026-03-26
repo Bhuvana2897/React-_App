@@ -218,6 +218,8 @@ export default App ;
 
 */
      
+      /*                           set state for dependencies for singlre state run
+
 
     import {useEffect , useState} from  "react" ;
 
@@ -249,5 +251,41 @@ export default App ;
     export default App ;
 
 
+
+  */
+
            
-   
+         //     api call fror useeffect
+
+    import {useState ,  useEffect} from "react" ;
+    import axios from "axios";
+     
+     const App = () => {
+
+      const [ Todos , setTodos] = useState ([0])
+
+      useEffect (() => {
+
+        axios.get ('https://698dd17eb79d1c928ed6a359.mockapi.io/todos')
+          .then (response =>{
+            setTodos (response. data)
+          })
+      })
+       return (
+        <>
+          <h1> Todos </h1>
+             
+          <ul> 
+             {
+              Todos
+                 .map ((Todo , index) => (
+                    <li key = {Todo.id  || index}> {Todo.Title} </li>
+                 ))
+             }
+          </ul>
+          </>
+
+       )
+     }
+     
+     export default App ;
