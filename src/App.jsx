@@ -13,6 +13,8 @@
 
 
 
+
+
 /*function App() {
  return (
   <>
@@ -293,7 +295,7 @@ export default App ;
      */
 
 
-                //  USEREF[ HOOKS]  
+                /*       USEREF[ HOOKS]  
 
           
 
@@ -326,5 +328,30 @@ export default App ;
          
          export default App   ;    
 
+         */
+
           
-    
+       import {useRef ,  useState} from  "react" 
+        
+        const App = () => {
+
+          let likes = useRef(0);
+          let [test , setTest] = useState (0);
+
+          const handleLike = () => {
+            likes.current++;
+            console.log(likes.current);
+
+          }
+          console.log(likes.current);
+          return (
+            
+            <>
+               <h1> Likes :{likes.current} </h1>
+               <button onClick={handleLike}> Likes  </button> &nbsp;
+               <button onClick ={() => setTest(test + 1)} > change State</button>
+            </>
+          )
+        }
+        
+        export default App
