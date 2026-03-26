@@ -412,7 +412,7 @@ export default App;
 
 */
 
-
+              /*   usereducer with [switch case statement]
 
 import { useReducer } from "react";
 
@@ -429,6 +429,56 @@ const reducer = ( state , action) => {
      return state ;
 
   }
+  return state ;
+};
+
+const App = () => {
+
+  let [Likes, dispatch] = useReducer(reducer, 0);
+
+  const handleLike = () => {
+    dispatch({
+      type : "LIKE" 
+    });
+  };
+
+  const handleDislike = () => {
+    dispatch ({
+      type : "DISLIKE"
+    });
+  };
+
+  
+
+  return (
+    <>
+      <h1> Likes :{Likes} </h1>
+      <button onClick={handleLike}> Likes </button> &nbsp;&nbsp;
+      <button onClick = { handleDislike}> Dislike</button>
+    </>
+  );
+};
+
+export default App;
+
+*/
+
+
+             //        USEEFFECT  USING [IF ELSE ]
+
+import { useReducer } from "react";
+
+const reducer = (state ,  action ) => {
+   if (action.type == 'LIKE'){
+          state = state + 1 ;
+
+      }else if ( action.type == 'DISLIKE'){
+                 state = state - 1 ;
+
+            } else {
+             return state ;
+  }
+
   return state ;
 };
 
