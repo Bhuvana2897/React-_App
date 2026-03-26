@@ -194,7 +194,7 @@ export default App ;
 
            // run a function after a component is rendered whenever state changes       
 
-import {useEffect , useState} from "react"; 
+  /*import {useEffect , useState} from "react"; 
 
 const App = () => {
 
@@ -215,7 +215,39 @@ const App = () => {
 }
 
 export default App ;
+
+*/
      
+
+    import {useEffect , useState} from  "react" ;
+
+    
+    const App = () => {
+
+      const [ Likes , setLikes ] = useState (0);
+      const [ Dislikes , setDislikes ] = useState (0);
+
+      useEffect (() =>{
+
+    console.log ('running inside useEfect')
+   // []  run a function after a componenet is rendered
+  } , [Likes] );
+
+      return (
+        <>
+       <div>
+              <button onClick={() => setLikes (Likes + 1) }> Likes</button> &nbsp; {Likes} &nbsp; Likes 
+       </div>
+       &nbsp;
+       <div>
+              <button onClick = {() => setDislikes ( Dislikes + 1) }> Dislikes </button> &nbsp; { Dislikes} &nbsp; Dislikes 
+       </div>
+       </>
+      )
+    }
+    
+    export default App ;
+
 
            
    
