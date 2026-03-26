@@ -20,7 +20,7 @@
 
 //export default App;
 
-/*             PARENT TO CHILD  DATA PASSING
+/*               PARENT TO CHILD  DATA PASSING
  
 
 
@@ -87,7 +87,7 @@ export default App;
 
 */
 
-//    FETCH
+//                          FETCH
 
 /*  import { useState } from "react";
 
@@ -128,7 +128,7 @@ export default App ;
 
 */
 
-/*      AXIOS
+/*                             AXIOS
 
 
 
@@ -172,11 +172,12 @@ export default App ;
      
 */
 
-// USE EFFECT [HOOKS]
+//                              USE EFFECT [HOOKS]
+
 
 // run a function after a component is rendered whenever state changes
 
-/*import {useEffect , useState} from "react"; 
+/*     import {useEffect , useState} from "react"; 
 
 const App = () => {
 
@@ -236,7 +237,7 @@ export default App ;
 
   */
 
-/*    api call fror useeffect
+/*                       api call fror useeffect
 
     import {useState ,  useEffect} from "react" ;
     import axios from "axios";
@@ -273,7 +274,7 @@ export default App ;
 
      */
 
-/*       USEREF[ HOOKS]  
+/*                          USEREF[ HOOKS]  
                       
 
           
@@ -309,7 +310,11 @@ export default App ;
 
          */
 
-/*            useRef [ normal variable and using useRef variables ]
+
+
+/*                  useRef [ normal variable and using useRef variables ]
+
+
           
        import {useRef ,  useState} from  "react" 
         
@@ -346,7 +351,7 @@ export default App ;
 
         */
 
-/*   Basic useState example  
+/*                             Basic useState example  
 
 
          import {useState} from  "react" 
@@ -375,7 +380,9 @@ export default App ;
         
         export default App ; */
 
-        //                  useReducer [ hooks]
+
+
+        /*                      useReducer [ hooks]
 
 import { useReducer } from "react";
 
@@ -396,6 +403,58 @@ const App = () => {
     <>
       <h1> Likes :{Likes} </h1>
       <button onClick={handleLike}> Likes </button> &nbsp;
+    </>
+  );
+};
+
+export default App;
+
+
+*/
+
+
+
+import { useReducer } from "react";
+
+const reducer = ( state , action) => {
+  switch (action.type) {
+
+    case 'LIKE': state = state + 1 ;
+    break ;
+
+    case 'DISLIKE' : state = state - 1 ;
+    break ;
+
+    default :
+     return state ;
+
+  }
+  return state ;
+};
+
+const App = () => {
+
+  let [Likes, dispatch] = useReducer(reducer, 0);
+
+  const handleLike = () => {
+    dispatch({
+      type : "LIKE" 
+    });
+  };
+
+  const handleDislike = () => {
+    dispatch ({
+      type : "DISLIKE"
+    });
+  };
+
+  
+
+  return (
+    <>
+      <h1> Likes :{Likes} </h1>
+      <button onClick={handleLike}> Likes </button> &nbsp;&nbsp;
+      <button onClick = { handleDislike}> Dislike</button>
     </>
   );
 };
