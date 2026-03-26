@@ -24,7 +24,9 @@
 
 //export default App;
 
-/*   PARENT TO CHILD  DATA PASSING
+/*             PARENT TO CHILD  DATA PASSING
+ 
+
 
  import Header from "./Components/Header.jsx";
 function App() {
@@ -37,7 +39,11 @@ function App() {
 }
 export default App;*/
 
-/*   CHILD TO PARRENT DATA PASSING
+
+
+/*                CHILD TO PARRENT DATA PASSING
+
+
 
 import Header from "./Components/Header.jsx";
 function App() {
@@ -53,7 +59,11 @@ function App() {
 }
 export default App; */
 
-/* PROPS DRILLING
+
+
+/*                       PROPS DRILLING
+
+
 
 import ParentComponent from "./Components/ParentComponent.jsx";
 
@@ -72,6 +82,10 @@ export default App ;
 
 
 
+             // FORM LOGIN 
+
+
+
  /*import Login from "./Components/login.jsx";
 
 const App = () => {
@@ -85,6 +99,9 @@ const App = () => {
 export default App;
 
 */
+
+              //    FETCH
+
 
 
 /*  import { useState } from "react";
@@ -127,7 +144,9 @@ export default App ;
 */
      
            
-   
+           /*      AXIOS
+
+
 
 import { useState } from "react";
 import axios from "axios";
@@ -167,5 +186,35 @@ const App = () => {
 
 export default App ;
      
+*/
+           
+   
+
+                  // USE EFFECT [HOOKS]
+
+           // run a function after a component is rendered whenever state changes       
+
+import {useEffect , useState} from "react"; 
+
+const App = () => {
+
+  const [ count , setCount] = useState(0);
+
+  useEffect (() =>{
+
+    console.log ('running inside useEfect')
+  } , );
+         
+          return (
+          <>
+            <h1>Count: {count}</h1>
+            <button onClick = {() => setCount(count + 1)}> Increase</button>
+          </>
+  )
+}
+
+export default App ;
+     
+
            
    
