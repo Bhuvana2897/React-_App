@@ -519,12 +519,14 @@ export default App;
      //  REACT ROUTER SETUP
 
 // 1. React router setup : npm install react-router@latest
-
+ 
 
 
 
 import { RouterProvider } from "react-router";
 import { createBrowserRouter } from "react-router"
+import Home from "./Pages/Home";
+
 const App = () => {
 
   // create a browsert router
@@ -533,7 +535,7 @@ const App = () => {
   const router = createBrowserRouter([
     {
        path : "/" ,
-       element : <h1> Hello , World !</h1>
+       element : <Home />
     }
   ])
   return (
