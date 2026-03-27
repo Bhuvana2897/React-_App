@@ -1,3 +1,5 @@
+
+
 /*function Header() {
   return (
     <>
@@ -8,7 +10,6 @@
   )
   
 }*/
-
 /*function App() {
  return (
   <>
@@ -464,7 +465,7 @@ export default App;
 */
 
 
-             //        USEEFFECT  USING [IF ELSE ]
+             /*        USEEFFECT  USING [IF ELSE ]
 
 import { useReducer } from "react";
 
@@ -509,4 +510,38 @@ const App = () => {
   );
 };
 
-export default App;
+export default App;  
+
+*/   
+
+
+
+     //  REACT ROUTER SETUP
+
+// 1. React router setup : npm install react-router@latest
+
+
+
+
+import { RouterProvider } from "react-router";
+import { createBrowserRouter } from "react-router"
+const App = () => {
+
+  // create a browsert router
+  // router route : http//localhost:5173 
+
+  const router = createBrowserRouter([
+    {
+       path : "/" ,
+       element : <h1> Hello , World !</h1>
+    }
+  ])
+  return (
+      <RouterProvider
+           router = {router}    
+      />
+ 
+  )
+}
+
+export default App ;
