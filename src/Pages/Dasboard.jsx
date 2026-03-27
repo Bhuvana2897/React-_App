@@ -2,7 +2,7 @@
 
 const Dasboard = () => {
   return (
-    <div>Dasboard</div>
+     <h1 className = "text-4xl p-4">Dasboard </h1>
   )
 }
 

@@ -2,7 +2,7 @@
 
 const HomeWrapper = () => {
   return (
-    <div>HomeWrapper</div>
+   <h1 className = "text-4xl p-4"> HomeWrapper</h1>
   )
 }
 
