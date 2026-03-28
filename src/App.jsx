@@ -525,8 +525,11 @@ export default App;
    import Register from './pages/Register';
    import Login from './pages/Login';
    import HomeWrapper from './wrappers/HomeWarpper';
-import { ToastContainer } from "react-toastify";
-import Errorpages from "./pages/Errorpages";
+   import { ToastContainer } from "react-toastify";
+   import Errorpages from "./pages/Errorpages";
+   import Dashboard from "./pages/Dashboard";
+   import Stats from "./pages/Stats";
+   import Todos from "./pages/Todos";
 
    const App = () => {
 
@@ -545,13 +548,27 @@ import Errorpages from "./pages/Errorpages";
                element : <Register/>
             },
             {
-                path :'login',
+                path :"login",
                 element : <Login />
             }
-            
-          ],
+          
+       ],
           errorElement : <Errorpages />
         },
+        {
+           path : "/dashboard",
+           element: <Dashboard />,
+           children : [
+                  {
+                    path : "",
+                    element : <Stats/>
+                  },
+                  {
+                    path :"todos",
+                    element  : <Todos />
+                  }
+                 ]
+            }
         
       ]);
 
