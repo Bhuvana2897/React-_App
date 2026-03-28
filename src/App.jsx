@@ -19,6 +19,8 @@
  )
 } */
 
+
+
 //export default App;
 
 /*               PARENT TO CHILD  DATA PASSING
@@ -514,47 +516,46 @@ export default App;
 
 */   
 
+//   1. Install react router npm install react-router@latest
 
 
-     //  REACT ROUTER SETUP
 
-// 1. React router setup : npm install react-router@latest
- 
+   import { createBrowserRouter, RouterProvider } from "react-router" ;
+   import Home from './pages/Home' ;
+   import Register from './pages/Register';
+   import Login from './pages/Login';
+   import HomeWrapper from './wrappers/HomeWarpper';
 
+   const App = () => {
 
-import "./index.css";
-import { RouterProvider } from "react-router";
-import { createBrowserRouter } from "react-router"
-import Home from "./Pages/Home";
-import Register from  "./Pages/Register"
-import Login from "./Pages/Login";
+    //create a browser router
+     const router =  createBrowserRouter([
+        {
+          path : "/",
+          element : <HomeWrapper />,
+          children : [
+            {
+              path : "",
+              element : <Home />
+            },
+            {
+               path : "register",
+               element : <Register/>
+            },
+            {
+                path :'login',
+                element : <Login />
+            }
+            
+          ]
+        },
+        
+      ]);
 
-const App = () => {
-
-  // create a browsert router
-  // router route : http//localhost:5173 
-
-  const router = createBrowserRouter([
-    {
-       path : "/" ,
-       element : <Home />
-    },
-    {
-      path : "/register" ,
-      element : <Register />
-    },
-    {
-      path : "/login" ,
-      element : <Login />
-    }
-
-  ])
-  return (
-      <RouterProvider
-           router = {router}    
-      />
- 
-  )
-}
-
-export default App ;
+      // provide router objects as props
+     return (
+         <RouterProvider  router= {router}/>
+     )
+   }
+   
+   export default App ;
