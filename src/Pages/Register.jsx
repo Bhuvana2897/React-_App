@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router"
+import { toast } from "react-toastify";
 
 
 const Register = () => {
@@ -18,7 +19,12 @@ const Register = () => {
       console.log(`password : ${password}`)
    
       setTimeout(() =>{
-         alert('Registration Succesfull')
+        //clear the form
+        setName ("") ;
+        setEmail("") ;
+        setPassword ("") ;
+          //alert('Registration Succesfull')
+         toast.success('Registration Successful')
          Navigate ("/Login") ; 
       } , 500)
 

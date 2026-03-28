@@ -525,6 +525,8 @@ export default App;
    import Register from './pages/Register';
    import Login from './pages/Login';
    import HomeWrapper from './wrappers/HomeWarpper';
+import { ToastContainer } from "react-toastify";
+import Errorpages from "./pages/Errorpages";
 
    const App = () => {
 
@@ -547,14 +549,23 @@ export default App;
                 element : <Login />
             }
             
-          ]
+          ],
+          errorElement : <Errorpages />
         },
         
       ]);
 
       // provide router objects as props
      return (
-         <RouterProvider  router= {router}/>
+         <>
+             <ToastContainer 
+                hideProgressBar = {true}
+                autoClose = {2500}
+                                                
+                 
+             />
+             <RouterProvider  router= {router}/>         
+         </>
      )
    }
    
